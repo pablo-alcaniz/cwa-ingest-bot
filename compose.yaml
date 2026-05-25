@@ -9,4 +9,4 @@ services:
       - INGEST_DIR=/ingest
       - CWA_URL=[YOUR_CWA_URL_HERE]
     volumes:
-    - [YOUR_FULL_INGEST_DIR_HERE]:/ingest
+    - [FULL_INGEST_DIR]:/ingest

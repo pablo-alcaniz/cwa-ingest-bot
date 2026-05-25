@@ -50,10 +50,13 @@ Copy `compose.yaml` and fill in the three placeholders:
 | Variable | Description |
 |----------|-------------|
 | `BOT_TOKEN` | Telegram bot token from BotFather |
-| `INGEST_DIR` | Path inside the container where CWA watches for new books (default: `/ingest`) |
+| `FULL_INGEST_DIR` | Full path to your CWA ingest directory on the host |
 | `CWA_URL` | Base URL of your CWA instance (used by `/ping`) |
 
-Mount your actual CWA ingest directory to `/ingest` in the container:
+
+The container runs as UID/GID `1000:1000` by default. Adjust the `user:` field in `compose.yaml` if your ingest directory is owned by a different user.
+
+NOTE: only modify fields marked with '[...]'. With the exception of `user:`, that only needs to be changed if your ingest directory is owned by a different user.
 
 ```yaml
 volumes:
@@ -65,8 +68,6 @@ volumes:
 ```bash
 docker compose up -d
 ```
-
-The container runs as UID/GID `1000:1000` by default. Adjust the `user:` field in `compose.yaml` if your ingest directory is owned by a different user.
 
 ## Limits
 
