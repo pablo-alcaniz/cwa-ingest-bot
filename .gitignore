@@ -8,6 +8,7 @@ wheels/
 .python-version
 pyproject.toml
 *.lock
+.env
 
 
 # Virtual environments

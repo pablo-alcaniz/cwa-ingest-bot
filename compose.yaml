@@ -3,9 +3,10 @@ services:
     build: .
     container_name: library-bot
     restart: unless-stopped
+    user: "1000:1000" # Run as non-root user (adjust UID:GID as needed)
     environment:
-      - BOT_TOKEN=
-      - INGEST_DIR=
-      - CWA_URL=
+      - BOT_TOKEN=[YOUR_TELEGRAM_BOT_TOKEN_HERE]
+      - INGEST_DIR=/ingest
+      - CWA_URL=[YOUR_CWA_URL_HERE]
     volumes:
-      - ${INGEST_PATH}:/cwa-book-ingest
+    - [YOUR_FULL_INGEST_DIR_HERE]:/ingest
