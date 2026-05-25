@@ -11,13 +11,19 @@ A Telegram bot that receives EPUB files and drops them into a [Calibre-Web Autom
 
 ## Installation
 
-1. Clone this repository.
-```git clone https://github.com/pablo-alcaniz/cwa-ingest-bot ```
+1. Clone this repository. \n
+```
+git clone https://github.com/pablo-alcaniz/cwa-ingest-bot
+```
 2. Enter the project directory.
-```cd cwa-ingest-bot```
+```
+cd cwa-ingest-bot
+```
 3. Modify `compose.yaml` as required (see Configuration section below).
 4. Start the bot using Docker Compose.
-```docker compose up -d```
+```
+docker compose up -d
+```
 
 
 
