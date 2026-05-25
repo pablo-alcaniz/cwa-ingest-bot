@@ -42,7 +42,9 @@ async def document_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("File size exceeds the 20MB limit.")
         return
 
-    doc_name = re.sub(r'[ /\\,:*?"<>|&$]', "", doc.file_name)
+    doc_name = re.sub(r'.epub', "", doc.file_name)
+    doc_name = re.sub(r'[ /\\.,:*?"<>|&$]', "", doc_name) + ".epub"
+
 
     # Download the file to a temporary location to prevent issues with CWA ingest process.
     tmp_doc = await doc.get_file()
