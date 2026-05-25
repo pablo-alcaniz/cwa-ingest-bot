@@ -39,11 +39,11 @@ docker compose up -d
 - A Telegram bot token (obtain one from [@BotFather](https://t.me/BotFather))
 - Docker + Docker Compose
 
-*Important note:* make sure you set up your Telegram bot restricting user access in the BotFather settings. This bot does not implement its own authentication, so it will accept files from any Telegram user if not restricted. You can restrict access in the Bot Father > Your Bot > Bot Settings > Access > Restrict bot users. If you want to allow more than one user, you can specify what user are allowed in the same section of Bot Settings.
+*Important note:* make sure you set up your Telegram bot restricting user access in the BotFather settings. This bot does not implement its own authentication, so it will accept files from any Telegram user if not restricted. You can restrict access in Bot Father > Your Bot > Bot Settings > Access > Restrict bot users. If you want to allow more than one user, you can specify what user are allowed in the same section of Bot Settings.
 
 ## Configuration
 
-Copy `compose.yaml` and fill in the three placeholders:
+Modify `compose.yaml` and fill in the three placeholders:
 
 | Variable | Description |
 |----------|-------------|
@@ -51,10 +51,9 @@ Copy `compose.yaml` and fill in the three placeholders:
 | `FULL_INGEST_DIR` | Full path to your CWA ingest directory on the host |
 | `CWA_URL` | Base URL of your CWA instance (used by `/ping`) |
 
+NOTE: only modify fields marked with '[...]'. With the exception of `user:`, that only needs to be changed if your ingest directory is owned by a different user.
 
 The container runs as UID/GID `1000:1000` by default. Adjust the `user:` field in `compose.yaml` if your ingest directory is owned by a different user. (You shouldn't touch this if you don't know what you're doing)
-
-NOTE: only modify fields marked with '[...]'. With the exception of `user:`, that only needs to be changed if your ingest directory is owned by a different user.
 
 
 ## Limits
