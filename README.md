@@ -11,21 +11,19 @@ A Telegram bot that receives EPUB files and drops them into a [Calibre-Web Autom
 
 ## Installation
 
-1. Clone this repository. \n
-```
+1. Clone this repository.
+```bash
 git clone https://github.com/pablo-alcaniz/cwa-ingest-bot
 ```
 2. Enter the project directory.
-```
+```bash
 cd cwa-ingest-bot
 ```
 3. Modify `compose.yaml` as required (see Configuration section below).
 4. Start the bot using Docker Compose.
-```
+```bash
 docker compose up -d
 ```
-
-
 
 ## Commands
 
@@ -35,13 +33,13 @@ docker compose up -d
 | `/ping` | Check connectivity to your CWA instance |
 | `/help` | Show available commands |
 
-Send any EPUB file directly to the bot to ingest it.
-
 ## Requirements
 
-- A running [Calibre-Web Automated](https://github.com/cronitorio/calibre-web-automated) instance with an ingest directory configured
+- A running [Calibre-Web Automated](https://github.com/crocodilestick/Calibre-Web-Automated) instance with an ingest directory configured
 - A Telegram bot token (obtain one from [@BotFather](https://t.me/BotFather))
 - Docker + Docker Compose
+
+Important note: make sure you set up your Telegram bot restricting user access in the BotFather settings. This bot does not implement its own authentication, so it will accept files from any Telegram user if not restricted. You can restrict access in the Bot Father > Your Bot > Bot Settings > Access > Restrict bot users. If you want to allow more than one user, you can specify what user are allowed in the same section of Bot Settings.
 
 ## Configuration
 
