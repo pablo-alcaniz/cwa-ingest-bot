@@ -1,0 +1,11 @@
+services:
+  telegram-bot:
+    build: .
+    container_name: library-bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=
+      - INGEST_DIR=
+      - CWA_URL=
+    volumes:
+      - ${INGEST_PATH}:/cwa-book-ingest
